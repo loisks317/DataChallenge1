@@ -1,0 +1,24 @@
+#
+# MLpractice.py
+#
+# work on trying out different ML techniques with the cancer data set
+#
+# LKS, July 2016, Insight
+#
+import numpy as np
+import glob
+import matplotlib.pyplot as plt
+from sklearn.svm import LinearSVC
+from sklearn import cross_validation
+data=np.genfromtxt(glob.glob('cancerData.txt')[0], delimiter=',')
+#
+# column 11 is what tells us if cancer is present or not
+#
+dataSwap=np.swapaxes(data, 1, 0)
+#cancerColumn=dataSwap[-1]
+#iYesCancer=np.where(cancerColumn==4)[0]
+#iNoCancer=np.where(cancerColumn==2)[0]
+#
+#
+X=np.array(dataSwap[1:-2])
+Y=np.array(dataSwap[-1]).ravel()

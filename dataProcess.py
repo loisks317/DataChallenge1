@@ -4,7 +4,8 @@
 import numpy as np
 import glob
 import matplotlib.pyplot as plt
-
+from sklearn.svm import LinearSVC
+from sklearn import cross_validation
 data=np.genfromtxt(glob.glob('cancerData.txt')[0], delimiter=',')
 #
 # column 11 is what tells us if cancer is present or not
